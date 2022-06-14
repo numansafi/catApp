@@ -1,27 +1,36 @@
-axios.defaults.headers.common["x-api-key"] =
-  "cc5937bc-590b-4ae7-a95f-dd70cf670735";
+const CAT_API_KEY = "cc5937bc-590b-4ae7-a95f-dd70cf670735";
+
+axios.defaults.headers.common["x-api-key"] = CAT_API_KEY;
 axios.defaults.baseURL = "https://api.thecatapi.com/v1/";
 
-const getCatGif = async () => {
-  try {
-    const response = await axios.get(
-      `images/search?limit=1&size=full&mime_types=gif`
-    );
-    const data = response.data[0];
+const catGifPath = "/images/search?mime_types=gif";
+const catPicPath = "/images/search?mime_types=png,jpg";
+const searchByBreedPath = "/images/search?breed_ids=beng";
 
-    console.log(response);
-    showOutput(data);
-  } catch (errors) {
-    console.error(errors);
-  }
-};
+function getCatGif() {
+  axios
+    .get(catGifPath)
+    .then((res) => showOutput(res))
+    .catch((err) => console.error(err));
+}
+function getCatPic() {
+  axios
+    .get(catPicPath)
+    .then((res) => showOutput(res))
+    .catch((err) => console.error(err));
+}
+function searchByBreed() {
+  axios
+    .get(searchByBreedPath)
+    .then((res) => showOutput(res))
+    .catch((err) => console.error(err));
+}
 
 function showOutput(res) {
-  document.getElementById("res").innerHTML = `
-  <div class="card card-body mb-3">
-  <img src="${res.url}" alt="">
-  </div>
-`;
+  const imageUrl = res.data[0].url;
+  return (document.getElementById("cat_image").src = imageUrl);
 }
 
 document.getElementById("catgifs").addEventListener("click", getCatGif);
+document.getElementById("catpics").addEventListener("click", getCatPic);
+document.getElementById("breed").addEventListener("click", searchByBreed);
