@@ -5,7 +5,9 @@ axios.defaults.baseURL = "https://api.thecatapi.com/v1/";
 
 const catGifPath = "/images/search?mime_types=gif";
 const catPicPath = "/images/search?mime_types=png,jpg";
-const searchByBreedPath = "/images/search?breed_ids=beng";
+const breedSearchValue = "beng";
+console.log(breedSearchValue);
+const searchByBreedPath = `/images/search?breed_ids=${breedSearchValue}`;
 
 function getCatGif() {
   axios
@@ -31,6 +33,6 @@ function showOutput(res) {
   return (document.getElementById("cat_image").src = imageUrl);
 }
 
-document.getElementById("catgifs").addEventListener("click", getCatGif);
-document.getElementById("catpics").addEventListener("click", getCatPic);
+document.getElementById("cat_gif").addEventListener("click", getCatGif);
+document.getElementById("cat_pic").addEventListener("click", getCatPic);
 document.getElementById("breed").addEventListener("click", searchByBreed);

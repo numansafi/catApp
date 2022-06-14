@@ -14,26 +14,37 @@
     <title>Cat App</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand">Navbar</a>
-      <button class="btn btn-primary my-3" id="catgifs">Cat Gif</button>
-      <button class="btn btn-success my-3" id="catpics">Cat Pics</button>
-      <button class="btn btn-success my-3" id="breed">Breed</button>
+    <nav
+      class="navbar navbar-expand navbar-dark bg-primary d-flex justify-content-between"
+    >
+      <a class="navbar-brand" href="#">Cat App</a>
+      <div class="d-flex justify-content-">
+        <button id="cat_gif" type="button" class="btn btn-outline-warning mr-5">
+          Cat Gif
+        </button>
+        <button id="cat_pic" type="button" class="btn btn-outline-dark ml-5">
+          Cat Pic
+        </button>
+      </div>
       <form class="form-inline">
         <input
           id="breed_search"
           class="form-control mr-sm-2"
           type="search"
-          placeholder="Search"
+          placeholder="Search By Breed"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <button
+          id="breed"
+          class="btn btn-outline-light my-2 my-sm-0"
+          type="button"
+        >
           Search
         </button>
       </form>
     </nav>
     <div class="container my-5">
-      <h1 class="display-4 text-center mb-3">Cat App</h1>
+      <h1 class="display-4 text-center mb-3">Cat Pics</h1>
       <hr />
       <div class="card card-body mb-3">
         <img id="cat_image" class="rounded" src="" />
