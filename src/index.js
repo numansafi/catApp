@@ -1,4 +1,4 @@
-const CAT_API_KEY = "cc5937bc-590b-4ae7-a95f-dd70cf670735";
+const CAT_API_KEY = "<INSERT API KEY>";
 
 axios.defaults.headers.common["x-api-key"] = CAT_API_KEY;
 axios.defaults.baseURL = "https://api.thecatapi.com/v1/";
