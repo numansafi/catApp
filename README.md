@@ -17,6 +17,18 @@ Change to catApp directory
 ```
 cd catApp
 ```
+Open index.js
+
+```
+cd src/index.js
+code .
+```
+
+Input catAPI key in `index.js` file
+
+```js
+const CAT_API_KEY = "<INSERT API KEY>";
+```
 
 Open the app within the browser
 
