@@ -20,7 +20,6 @@ function getCatPic() {
   axios
     .get(catPicPath)
     .then((res) => {
-      console.log(res);
       displayImage(res, "Cat Pic");
     })
     .catch((err) => console.error(err));
@@ -33,8 +32,6 @@ function searchByBreed() {
   axios
     .get(searchByBreedPath)
     .then((res) => {
-      console.log(res);
-      console.log(res.data[0]);
       displayBreedInfo(res);
     })
     .catch((err) => console.error(err));
